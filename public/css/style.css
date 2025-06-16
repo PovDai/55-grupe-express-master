@@ -1,0 +1,16 @@
+body,
+body * {
+box-sizing: border-box;
+margin:0;
+padding:0;
+}
+body{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+background-color: black;
+color: gold;
+}
+.navbar a{
+    background-color:black;
+    color: gold;
+   
+}

@@ -2,6 +2,7 @@ export class PageTemplate {
     constructor() {
         this.pageType = 'default';
         this.isAsideVisible = true;
+        this.pageJS = '';
     }
 
     head() {
@@ -10,14 +11,23 @@ export class PageTemplate {
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Express example</title>
+                
+                  <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+                <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+                 <link rel="shortcut icon" href="./favicon.ico" />
+                <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+                 <meta name="apple-mobile-web-app-title" content="Express" />
+                <link rel="manifest" href="./favicon/site.webmanifest" />
+                <link rel="stylesheet" href="/css/style.css">
+                <link rel="stylesheet" href="/css/vendor/font-awesome.min.css">
             </head>`;
     }
 
     header() {
         return `
             <header>
-                <img src="#" alt="Logo">
-                <nav>
+                <img src="/img/logo.jpg" alt="Logo">
+                <nav class="navbar">
                     <a href="/">Home</a>
                     <a href="/about">About</a>
                     <a href="/register">Register</a>
@@ -29,7 +39,7 @@ export class PageTemplate {
     headerAuth() {
         return `
             <header>
-                <img src="#" alt="Logo">
+                <img src="/img/logo.jpg" alt="Logo">
                 <nav>
                     <a href="/register">Register</a>
                     <a href="/login">Login</a>
@@ -46,6 +56,7 @@ export class PageTemplate {
                     <a href="/about">About</a>
                     <a href="/register">Register</a>
                     <a href="/login">Login</a>
+                    <i class="fa fa-thermometer-quarter" aria-hidden="true"></i>
                 </nav>
             </footer>`;
     }
@@ -55,6 +66,12 @@ export class PageTemplate {
             <footer>
                 Pagaminta Lietuvoje &copy; 2025
             </footer>`;
+    }
+    script() {
+        if(!this.pageJS){
+            return '';
+        }
+        return `<script src="/js/${this.pageJS}" type="module"></script>`
     }
 
     aside() {
@@ -75,6 +92,7 @@ export class PageTemplate {
                 ${this.isAsideVisible ? this.aside() : ''}
                 <main>${this.main()}</main>
                 ${this.pageType === 'default' ? this.footer() : this.footerAuth()}
+                ${this.script()}
             </body>
             </html>`;
     }

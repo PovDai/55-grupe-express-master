@@ -1,4 +1,5 @@
 import express from 'express';
+
 import { PageHome } from './pages/PageHome.js';
 import { PageAbout } from './pages/PageAbout.js';
 import { PageRegister } from './pages/PageRegister.js';
@@ -6,6 +7,8 @@ import { Page404 } from './pages/Page404.js';
 
 const app = express();
 const port = 3000;
+
+app.use(express.static('public'))
 
 app.get('/', (req, res) => res.send(new PageHome().render()));
 app.get('/about', (req, res) => res.send(new PageAbout().render()));
