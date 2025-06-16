@@ -1,8 +1,8 @@
 import { PageTemplate } from "../template/PageTemplate.js";
 
 export class PageAbout extends PageTemplate {
-    constructor() {
-        super();
+    constructor(req) {
+        super(req);
         this.pageJS = 'about';
 }
 

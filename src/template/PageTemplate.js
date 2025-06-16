@@ -1,5 +1,6 @@
 export class PageTemplate {
-    constructor() {
+    constructor(req) {
+        this.req = req;
         this.pageType = 'default';
         this.isAsideVisible = true;
         this.pageJS = '';
@@ -18,6 +19,7 @@ export class PageTemplate {
                 <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
                  <meta name="apple-mobile-web-app-title" content="Express" />
                 <link rel="manifest" href="./favicon/site.webmanifest" />
+                
                 <link rel="stylesheet" href="/css/style.css">
                 <link rel="stylesheet" href="/css/vendor/font-awesome.min.css">
             </head>`;
@@ -32,6 +34,7 @@ export class PageTemplate {
                     <a href="/about">About</a>
                     <a href="/register">Register</a>
                     <a href="/login">Login</a>
+                    <a href="/services">Services</a>
                 </nav>
             </header>`;
     }
@@ -56,6 +59,7 @@ export class PageTemplate {
                     <a href="/about">About</a>
                     <a href="/register">Register</a>
                     <a href="/login">Login</a>
+                    <a href="/services">Services</a>
                     <i class="fa fa-thermometer-quarter" aria-hidden="true"></i>
                 </nav>
             </footer>`;

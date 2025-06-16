@@ -1,8 +1,8 @@
 import { PageTemplate } from "../template/PageTemplate.js";
 
 export class PageHome extends PageTemplate {
-    constructor() {
-        super();
+    constructor(req) {
+        super(req);
         this.pageJS = 'main';
     }
 
@@ -15,7 +15,7 @@ export class PageHome extends PageTemplate {
         }
 
         return `
-            <h1>Home page</h1>
+            <h1>Home page <i class="fa fa-bug" aria-hidden="true"></i></h1> 
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa culpa animi explicabo quo dignissimos consequuntur voluptates. Autem ipsa eius mollitia fugiat veniam explicabo rerum, pariatur, dolores impedit eum aliquam obcaecati?</p>
             <h1>Services</h1>
             <ul>${servicesHTML}</ul>`;
