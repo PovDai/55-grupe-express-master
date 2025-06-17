@@ -1,8 +1,8 @@
 import { PageTemplate } from "../template/PageTemplate.js";
 
 export class PageRegister extends PageTemplate {
-    constructor(req) {
-        super(req);
+    constructor() {
+        super();
         this.pageType = 'auth';
         this.isAsideVisible = false;
     }
